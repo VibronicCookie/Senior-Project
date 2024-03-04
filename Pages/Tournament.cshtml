@@ -137,13 +137,11 @@
         </div>
     </div>
     <script>
-        // JavaScript for resizable side navigation
         document.addEventListener("DOMContentLoaded", function () {
             var sidebar = document.querySelector('.sidenav');
             var mainContent = document.querySelector('.main');
             var isResizing = false;
 
-            // Function to handle resizing
             function handleMouseDown(e) {
                 isResizing = true;
                 document.addEventListener('mousemove', handleMouseMove);
@@ -153,7 +151,6 @@
                 });
             }
 
-            // Function to update the width during resizing
             function handleMouseMove(e) {
                 if (isResizing) {
                     var newWidth = e.clientX - sidebar.offsetLeft;
@@ -162,12 +159,26 @@
                 }
             }
 
-            // Event listener for mouse down on the resizer
             var resizer = document.createElement('div');
             resizer.className = 'resizer';
             sidebar.appendChild(resizer);
 
             resizer.addEventListener('mousedown', handleMouseDown);
+
+            // Scroll event listener to check and reposition .sidenav
+            window.addEventListener('scroll', function () {
+                var scrollPosition = window.scrollY;
+                var mainContentRect = mainContent.getBoundingClientRect();
+
+                // Adjust the position of .sidenav based on scroll and main content position
+                if (scrollPosition > mainContentRect.top) {
+                    sidebar.style.position = 'fixed';
+                    sidebar.style.top = '0';
+                } else {
+                    sidebar.style.position = 'absolute';
+                    sidebar.style.top = mainContentRect.top + 'px';
+                }
+            });
         });
     </script>
 </body>
