@@ -19,27 +19,60 @@
         color: #233E8D;
     }
 
-    .pdf-viewer iframe {
-        width: 100%;
-        height: 500px; /* Adjust height as needed */
-        border: none;
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns of equal size */
+        grid-gap: 20px; /* Space between grid items */
+        max-width: 800px; /* Maximum width of the section */
+        width: 100%; /* Take up the entire width of the screen */
+        margin: auto; /* Center the section horizontally */
+        box-sizing: border-box; /* Include padding and borders in total width and height */
     }
+
+        section div {
+            border: 1px solid #000;
+            padding: 10px; /* Add some padding around the content */
+            display: flex; /* Use flexbox for internal alignment */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center-align the flex items */
+        }
+
+        section img {
+            width: 100%; /* Make images responsive within their containers */
+            max-width: 300px; /* Increase the maximum width for larger images */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 10px; /* Space between the link and image */
+        }
 </style>
 
 <h1>First Annual Hammer Saints Invitational</h1>
 
-<h1>First Annual Hammer Saints Invitational</h1>
 <div class="results">
     Results:
-    <a href="~/HSC24%20WOMENSVARSITYTEAM.pdf" target="_blank">Women's varsity</a>
-    <img src="~/HSC24 WOMENSVARSITYTEAM.jpg" alt="Women's Varsity" />
-    <a href="~/HSC24%20MENSVARSITYTEAM.pdf" target="_blank">Men's varsity</a>
-    <img src="~/HSC24 MENSVARSITYTEAM.jpg" alt="Men's Varsity" />
-    <a href="~/HSC24%20WOMENSJVTEAM.pdf" target="_blank">Women's junior varsity</a>
-    <img src="~/HSC24 WOMENSJVTEAM.jpg" alt="Women's JV" />
-    <a href="~/HSC24%20MENSJVTEAM.pdf" target="_blank">Men's junior varsity</a>
-    <img src="~/HSC24 MENSJVTEAM.jpg" alt="Men's JV" />
+    <section>
+        <!-- Women's Varsity -->
+        <div>
+            <a href="~/HSC24%20WOMENSVARSITYTEAM.pdf" target="_blank">Women's varsity</a>
+            <img src="~/HSC24 WOMENSVARSITYTEAM.jpg" alt="Women's Varsity" />
+        </div>
+        <!-- Men's Varsity -->
+        <div>
+            <a href="~/HSC24%20MENSVARSITYTEAM.pdf" target="_blank">Men's varsity</a>
+            <img src="~/HSC24 MENSVARSITYTEAM.jpg" alt="Men's Varsity" />
+        </div>
+        <!-- Women's Junior Varsity -->
+        <div>
+            <a href="~/HSC24%20WOMENSJVTEAM.pdf" target="_blank">Women's junior varsity</a>
+            <img src="~/HSC24 WOMENSJVTEAM.jpg" alt="Women's JV" />
+        </div>
+        <!-- Men's Junior Varsity -->
+        <div>
+            <a href="~/HSC24%20MENSJVTEAM.pdf" target="_blank">Men's junior varsity</a>
+            <img src="~/HSC24 MENSJVTEAM.jpg" alt="Men's JV" />
+        </div>
+    </section>
 </div>
+
 <div class="informationheader">
     Information:
 </div>
