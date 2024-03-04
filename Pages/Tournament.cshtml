@@ -2,115 +2,174 @@
 @model Senior_Project.Pages.TournamentModel
 @{
 }
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-    #main {
-        float: left;
-        width: auto;
-    }
-
-    h1 {
-        font-family: 'Palanquin';
-        text-align: center;
-        font-weight: bold;
-        font-size: 45px;
-        color: #233E8D;
-    }
-
-    #results, #informationheader {
-        font-family: 'Palanquin';
-        font-weight: bold;
-        font-size: 30px;
-        color: #233E8D;
-    }
-
-    section {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Two columns of equal size */
-        grid-gap: 20px; /* Space between grid items */
-        max-width: 800px; /* Maximum width of the section */
-        width: 100%; /* Take up the entire width of the screen */
-        margin: auto; /* Center the section horizontally */
-        box-sizing: border-box; /* Include padding and borders in total width and height */
-    }
-
-        section div {
-            padding: 10px; /* Add some padding around the content */
-            display: flex; /* Use flexbox for internal alignment */
-            flex-direction: column; /* Stack elements vertically */
-            align-items: center; /* Center-align the flex items */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/@(nameof(Senior_Project)).styles.css" />
+    @*<style>
+        .main {
+            margin-left: 160px; /* Initial margin-left */
+            transition: margin-left 0.3s; /* Add a smooth transition for resizing */
         }
 
-        section img {
-            width: 100%; /* Make images responsive within their containers */
-            max-width: 300px; /* Increase the maximum width for larger images */
-            height: auto; /* Maintain aspect ratio */
-            margin-top: 10px; /* Space between the link and image */
+        h1 {
+            font-family: 'Palanquin';
+            text-align: center;
+            font-weight: bold;
+            font-size: 45px;
+            color: #233E8D;
         }
 
-    #sidenav {
-        float: left;
-        padding: 10px;
-        width: 215px;
-        height: 100%;
-        background-color: #233E8D;
-        color: white;
-    }
+        #results, #informationheader {
+            font-family: 'Palanquin';
+            font-weight: bold;
+            font-size: 30px;
+            color: #233E8D;
+        }
 
-    #informationbody p {
-        line-height: 1; /* Adjust the value as needed */
-        margin-bottom: 6px; /* Add some bottom margin for separation */
-    }
-</style>
+        section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns of equal size */
+            grid-gap: 20px; /* Space between grid items */
+            max-width: 800px; /* Maximum width of the section */
+            width: 100%; /* Take up the entire width of the screen */
+            margin: auto; /* Center the section horizontally */
+            box-sizing: border-box; /* Include padding and borders in total width and height */
+        }
 
-<div id="sidenav">
-    <div id="informationheader">
-        Information:
+            section div {
+                padding: 10px; /* Add some padding around the content */
+                display: flex; /* Use flexbox for internal alignment */
+                flex-direction: column; /* Stack elements vertically */
+                align-items: center; /* Center-align the flex items */
+            }
+
+            section img {
+                width: 100%; /* Make images responsive within their containers */
+                max-width: 300px; /* Increase the maximum width for larger images */
+                height: auto; /* Maintain aspect ratio */
+                margin-top: 10px; /* Space between the link and image */
+            }
+
+        .sidenav {
+            float: left;
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            background-color: #233E8D;
+            color: white;
+            overflow-x: hidden;
+            padding-top: 20px;
+            resize: horizontal; /* Enable horizontal resizing */
+            overflow: auto; /* Allow content to be visible while resizing */
+        }
+
+        #informationheader, #informationbody {
+            margin-left: 5px;
+        }
+
+            #informationbody p {
+                line-height: 1; /* Adjust the value as needed */
+                margin-bottom: 6px; /* Add some bottom margin for separation */
+            }
+
+        .resizer {
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: ew-resize;
+        }
+    </style>*@
+</head>
+<body>
+    <div class="sidenav">
+        <div id="informationheader">
+            Information:
+        </div>
+        <div id="informationbody">
+            <p>Junior Cole Arsenault (Huntsville, AL / Sparksman) led the Saints by placing 3rd overall with a total pin count of 857 over 4 games for an average of 214.3.</p>
+            <p>Senior Jake Toelke (Colerain, OH / La Salle) placed 10th and knocked down 830 pins over 4 games for an average of 207.5.</p>
+            <p>Senior Joey Curtis (Coral Springs, FL / Saint Thomas Aquinas) placed 28th and knocked down a total of 745 pins over 4 games for an average of 186.3.</p>
+            <p>First year Caleb Herbers (Cincinnati, OH / Elder) placed 36th and knocked down 721 pins over 4 games for an average of 180.3.</p>
+            <p>First year Jace Combs placed 39th and knocked down 707 pins over 4 games for an average of 176.8.</p>
+            <p>Sophomore Ryne Webster (Loveland, OH / Loveland) placed 52nd and knocked down 635 pins over 4 games for an average of 158.8.</p>
+            <p>Sophomore Zachary Beltz (Cheviot, OH / Cincinnati Christian) placed 60th and knocked down 581 pins over 4 games for an average of 145.3.</p>
+            <p>Sophomore Jared Littelmann (Cincinnati, OH / St. Xavier) placed 61st and knocked down 572 pins over 3 games for an average of 190.7.</p>
+            <p>First year Conrad Nunan (Fort Thomas, KY / Highlands) placed 66th and knocked down 535 pins over 4 games for an average of 133.8.</p>
+            <p>Junior Evan Williams (Cincinnati, OH / West Clermont) placed 77th and knocked down 352 pins over 2 games for an average of 176.</p>
+            <p>Senior Ethan Boyers (Cincinnati, OH / Elder) placed 79th and knocked down a total of 317 pins over 2 games for an average of 158.5.</p>
+            <p>Junior Carter Wahl (Covington, KY / Holy Cross) placed 88th and knocked down 153 pins in his only game.</p>
+        </div>
     </div>
-    <div id="informationbody">
-        <p>Junior Cole Arsenault (Huntsville, AL / Sparksman) led the Saints by placing 3rd overall with a total pin count of 857 over 4 games for an average of 214.3.</p>
-        <p>Senior Jake Toelke (Colerain, OH / La Salle) placed 10th and knocked down 830 pins over 4 games for an average of 207.5.</p>
-        <p>Senior Joey Curtis (Coral Springs, FL / Saint Thomas Aquinas) placed 28th and knocked down a total of 745 pins over 4 games for an average of 186.3.</p>
-        <p>First year Caleb Herbers (Cincinnati, OH / Elder) placed 36th and knocked down 721 pins over 4 games for an average of 180.3.</p>
-        <p>First year Jace Combs placed 39th and knocked down 707 pins over 4 games for an average of 176.8.</p>
-        <p>Sophomore Ryne Webster (Loveland, OH / Loveland) placed 52nd and knocked down 635 pins over 4 games for an average of 158.8.</p>
-        <p>Sophomore Zachary Beltz (Cheviot, OH / Cincinnati Christian) placed 60th and knocked down 581 pins over 4 games for an average of 145.3.</p>
-        <p>Sophomore Jared Littelmann (Cincinnati, OH / St. Xavier) placed 61st and knocked down 572 pins over 3 games for an average of 190.7.</p>
-        <p>First year Conrad Nunan (Fort Thomas, KY / Highlands) placed 66th and knocked down 535 pins over 4 games for an average of 133.8.</p>
-        <p>Junior Evan Williams (Cincinnati, OH / West Clermont) placed 77th and knocked down 352 pins over 2 games for an average of 176.</p>
-        <p>Senior Ethan Boyers (Cincinnati, OH / Elder) placed 79th and knocked down a total of 317 pins over 2 games for an average of 158.5.</p>
-        <p>Junior Carter Wahl (Covington, KY / Holy Cross) placed 88th and knocked down 153 pins in his only game.</p>
-    </div>
-</div>
 
-<div id="main">
-    <h1>First Annual Hammer Saints Invitational</h1>
+    <div class="main">
+        <h1>First Annual Hammer Saints Invitational</h1>
 
-    <div id="results">
-        Results:
-        <section>
-            <!-- Women's Varsity -->
-            <div>
-                <a href="~/HSC24%20WOMENSVARSITYTEAM.pdf" target="_blank">Women's varsity</a>
-                <img src="~/HSC24 WOMENSVARSITYTEAM.jpg" alt="Women's Varsity" />
-            </div>
-            <!-- Men's Varsity -->
-            <div>
-                <a href="~/HSC24%20MENSVARSITYTEAM.pdf" target="_blank">Men's varsity</a>
-                <img src="~/HSC24 MENSVARSITYTEAM.jpg" alt="Men's Varsity" />
-            </div>
-            <!-- Women's Junior Varsity -->
-            <div>
-                <a href="~/HSC24%20WOMENSJVTEAM.pdf" target="_blank">Women's junior varsity</a>
-                <img src="~/HSC24 WOMENSJVTEAM.jpg" alt="Women's JV" />
-            </div>
-            <!-- Men's Junior Varsity -->
-            <div>
-                <a href="~/HSC24%20MENSJVTEAM.pdf" target="_blank">Men's junior varsity</a>
-                <img src="~/HSC24 MENSJVTEAM.jpg" alt="Men's JV" />
-            </div>
-        </section>
+        <div id="results">
+            Results:
+            <section>
+                <!-- Women's Varsity -->
+                <div>
+                    <a href="~/HSC24%20WOMENSVARSITYTEAM.pdf" target="_blank">Women's varsity</a>
+                    <img src="~/HSC24 WOMENSVARSITYTEAM.jpg" alt="Women's Varsity" />
+                </div>
+                <!-- Men's Varsity -->
+                <div>
+                    <a href="~/HSC24%20MENSVARSITYTEAM.pdf" target="_blank">Men's varsity</a>
+                    <img src="~/HSC24 MENSVARSITYTEAM.jpg" alt="Men's Varsity" />
+                </div>
+                <!-- Women's Junior Varsity -->
+                <div>
+                    <a href="~/HSC24%20WOMENSJVTEAM.pdf" target="_blank">Women's junior varsity</a>
+                    <img src="~/HSC24 WOMENSJVTEAM.jpg" alt="Women's JV" />
+                </div>
+                <!-- Men's Junior Varsity -->
+                <div>
+                    <a href="~/HSC24%20MENSJVTEAM.pdf" target="_blank">Men's junior varsity</a>
+                    <img src="~/HSC24 MENSJVTEAM.jpg" alt="Men's JV" />
+                </div>
+            </section>
+        </div>
     </div>
-</div>
+
+    <script>
+        // JavaScript for resizable side navigation
+        document.addEventListener("DOMContentLoaded", function () {
+            var sidebar = document.querySelector('.sidenav');
+            var mainContent = document.querySelector('.main');
+            var isResizing = false;
+
+            // Function to handle resizing
+            function handleMouseDown(e) {
+                isResizing = true;
+                document.addEventListener('mousemove', handleMouseMove);
+                document.addEventListener('mouseup', () => {
+                    isResizing = false;
+                    document.removeEventListener('mousemove', handleMouseMove);
+                });
+            }
+
+            // Function to update the width during resizing
+            function handleMouseMove(e) {
+                if (isResizing) {
+                    var newWidth = e.clientX - sidebar.offsetLeft;
+                    sidebar.style.width = newWidth + 'px';
+                    mainContent.style.marginLeft = newWidth + 'px';
+                }
+            }
+
+            // Event listener for mouse down on the resizer
+            var resizer = document.createElement('div');
+            resizer.className = 'resizer';
+            sidebar.appendChild(resizer);
+
+            resizer.addEventListener('mousedown', handleMouseDown);
+        });
+    </script>
+</body>
+</html>
