@@ -86,7 +86,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="sidenav">
         <div id="informationheader">
@@ -114,22 +113,18 @@
         <div id="results">
             Results:
             <section>
-                <!-- Women's Varsity -->
                 <div>
                     <a href="~/HSC24%20WOMENSVARSITYTEAM.pdf" target="_blank">Women's varsity</a>
                     <img src="~/HSC24 WOMENSVARSITYTEAM.jpg" alt="Women's Varsity" />
                 </div>
-                <!-- Men's Varsity -->
                 <div>
                     <a href="~/HSC24%20MENSVARSITYTEAM.pdf" target="_blank">Men's varsity</a>
                     <img src="~/HSC24 MENSVARSITYTEAM.jpg" alt="Men's Varsity" />
                 </div>
-                <!-- Women's Junior Varsity -->
                 <div>
                     <a href="~/HSC24%20WOMENSJVTEAM.pdf" target="_blank">Women's junior varsity</a>
                     <img src="~/HSC24 WOMENSJVTEAM.jpg" alt="Women's JV" />
                 </div>
-                <!-- Men's Junior Varsity -->
                 <div>
                     <a href="~/HSC24%20MENSJVTEAM.pdf" target="_blank">Men's junior varsity</a>
                     <img src="~/HSC24 MENSJVTEAM.jpg" alt="Men's JV" />
@@ -138,51 +133,51 @@
         </div>
     </div>
     <script>
-        //if (screen.width > 480) {
-        //    document.addEventListener("DOMContentLoaded", function () {
-        //        var sidebar = document.querySelector('.sidenav');
-        //        var mainContent = document.querySelector('.main');
-        //        var isResizing = false;
+        if (window.innerWidth > 480) {
+            document.addEventListener("DOMContentLoaded", function () {
+                var sidebar = document.querySelector('.sidenav');
+                var mainContent = document.querySelector('.main');
+                var isResizing = false;
 
-        //        function handleMouseDown(e) {
-        //            isResizing = true;
-        //            document.addEventListener('mousemove', handleMouseMove);
-        //            document.addEventListener('mouseup', () => {
-        //                isResizing = false;
-        //                document.removeEventListener('mousemove', handleMouseMove);
-        //            });
-        //        }
+                function handleMouseDown(e) {
+                    isResizing = true;
+                    document.addEventListener('mousemove', handleMouseMove);
+                    document.addEventListener('mouseup', () => {
+                        isResizing = false;
+                        document.removeEventListener('mousemove', handleMouseMove);
+                    });
+                }
 
-        //        function handleMouseMove(e) {
-        //            if (isResizing) {
-        //                var newWidth = e.clientX - sidebar.offsetLeft;
-        //                sidebar.style.width = newWidth + 'px';
-        //                mainContent.style.marginLeft = newWidth + 'px';
-        //            }
-        //        }
+                function handleMouseMove(e) {
+                    if (isResizing) {
+                        var newWidth = e.clientX - sidebar.offsetLeft;
+                        sidebar.style.width = newWidth + 'px';
+                        mainContent.style.marginLeft = newWidth + 'px';
+                    }
+                }
 
-        //        var resizer = document.createElement('div');
-        //        resizer.className = 'resizer';
-        //        sidebar.appendChild(resizer);
+                var resizer = document.createElement('div');
+                resizer.className = 'resizer';
+                sidebar.appendChild(resizer);
 
-        //        resizer.addEventListener('mousedown', handleMouseDown);
+                resizer.addEventListener('mousedown', handleMouseDown);
 
-        //        // Scroll event listener to check and reposition .sidenav
-        //        window.addEventListener('scroll', function () {
-        //            var scrollPosition = window.scrollY;
-        //            var mainContentRect = mainContent.getBoundingClientRect();
+                // Scroll event listener to check and reposition .sidenav
+                window.addEventListener('scroll', function () {
+                    var scrollPosition = window.scrollY;
+                    var mainContentRect = mainContent.getBoundingClientRect();
 
-        //            // Adjust the position of .sidenav based on scroll and main content position
-        //            if (scrollPosition > mainContentRect.top) {
-        //                sidebar.style.position = 'fixed';
-        //                sidebar.style.top = '0';
-        //            } else {
-        //                sidebar.style.position = 'absolute';
-        //                sidebar.style.top = mainContentRect.top + 'px';
-        //            }
-        //        });
-        //    });
-        //}
+                    // Adjust the position of .sidenav based on scroll and main content position
+                    if (scrollPosition > mainContentRect.top) {
+                        sidebar.style.position = 'fixed';
+                        sidebar.style.top = '0';
+                    } else {
+                        sidebar.style.position = 'absolute';
+                        sidebar.style.top = mainContentRect.top + 'px';
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>

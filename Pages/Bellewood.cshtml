@@ -16,11 +16,21 @@
     <title>360 Views</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 </head>
 
 <body>
-@*    <script>
+    <a-scene>
+        <a-entity id="cam" camera="zoom: 1" look-controls="reverseMouseDrag: true"></a-entity>
+        <!-- my pano image stuff -->
+        <a-assets>
+            <img id="Bellewood360" crossorigin="anonymous" src="~/VPhoto.jpg" />
+        </a-assets>
+        <a-sky src="#Bellewood360"></a-sky>
+        <a-text font="kelsonsans" value="Welcome to Superbowl Bellewood" width="3" position="1 0 1" rotation="0 0 0"></a-text>
+    </a-scene>
+
+    <script>
         window.addEventListener("wheel", (event) => {
             // small increments for smoother zooming
             const delta = event.wheelDelta / 120 / 10;
@@ -36,18 +46,5 @@
             document.getElementById("cam").setAttribute("camera", mycam);
         });
     </script>
-    <a-scene>
-        <a-entity id="cam"
-                  camera="zoom: 1"
-                  look-controls="reverseMouseDrag: true"></a-entity>
-        <!-- my pano image stuff -->
-        <a-assets>
-            <img id="skyTexture" crossorigin="anonymous" src="01-cover.jpg" />
-        </a-assets>
-        <a-sky src="#skyTexture"></a-sky>
-        <a-text font="kelsonsans" value="Welcome to Superbowl Bellewood" width="3" position="-10 0 10"
-                rotation="0 60 0"></a-text>
-    </a-scene>*@
-
-    <iframe width="100%" height="640" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/5HynY?logo=1&info=1&fs=1&vr=0&zoom=1&sd=1&thumbs=1"></iframe>
+    @*<iframe width="100%" height="640" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/5HynY?logo=1&info=1&fs=1&vr=0&zoom=1&sd=1&thumbs=1"></iframe>*@
 </body>
