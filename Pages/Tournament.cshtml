@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .main {
-            margin-left: 160px; /* Initial margin-left */
+            margin-left: 220px; /* Initial margin-left */
             transition: margin-left 0.3s; /* Add a smooth transition for resizing */
         }
 
@@ -52,7 +52,7 @@
         .sidenav {
             float: left;
             height: 100%;
-            width: 160px;
+            width: 220px;
             position: fixed;
             z-index: 1;
             left: 0;
@@ -87,7 +87,7 @@
 <body>
     <div class="sidenav">
         <div id="informationheader">
-            Information:
+            Thomas More Results:
         </div>
         <div id="informationbody">
             <p>Junior Cole Arsenault (Huntsville, AL / Sparksman) led the Saints by placing 3rd overall with a total pin count of 857 over 4 games for an average of 214.3.</p>
@@ -104,10 +104,8 @@
             <p>Junior Carter Wahl (Covington, KY / Holy Cross) placed 88th and knocked down 153 pins in his only game.</p>
         </div>
     </div>
-
     <div class="main">
         <h1>First Annual Hammer Saints Invitational</h1>
-
         <div id="results">
             Results:
             <section>
@@ -130,51 +128,51 @@
             </section>
         </div>
     </div>
-    <script>
-        if (window.innerWidth > 480) {
-            document.addEventListener("DOMContentLoaded", function () {
-                var sidebar = document.querySelector('.sidenav');
-                var mainContent = document.querySelector('.main');
-                var isResizing = false;
-
-                function handleMouseDown(e) {
-                    isResizing = true;
-                    document.addEventListener('mousemove', handleMouseMove);
-                    document.addEventListener('mouseup', () => {
-                        isResizing = false;
-                        document.removeEventListener('mousemove', handleMouseMove);
-                    });
-                }
-
-                function handleMouseMove(e) {
-                    if (isResizing) {
-                        var newWidth = e.clientX - sidebar.offsetLeft;
-                        sidebar.style.width = newWidth + 'px';
-                        mainContent.style.marginLeft = newWidth + 'px';
-                    }
-                }
-
-                var resizer = document.createElement('div');
-                resizer.className = 'resizer';
-                sidebar.appendChild(resizer);
-
-                resizer.addEventListener('mousedown', handleMouseDown);
-
-                // Scroll event listener to check and reposition .sidenav
-                window.addEventListener('scroll', function () {
-                    var scrollPosition = window.scrollY;
-                    var mainContentRect = mainContent.getBoundingClientRect();
-
-                    // Adjust the position of .sidenav based on scroll and main content position
-                    if (scrollPosition > mainContentRect.top) {
-                        sidebar.style.position = 'fixed';
-                        sidebar.style.top = '0';
-                    } else {
-                        sidebar.style.position = 'absolute';
-                        sidebar.style.top = mainContentRect.top + 'px';
-                    }
-                });
-            });
-        }
-    </script>
 </body>
+<script>
+    if (window.innerWidth > 480) {
+        document.addEventListener("DOMContentLoaded", function () {
+            var sidebar = document.querySelector('.sidenav');
+            var mainContent = document.querySelector('.main');
+            var isResizing = false;
+
+            function handleMouseDown(e) {
+                isResizing = true;
+                document.addEventListener('mousemove', handleMouseMove);
+                document.addEventListener('mouseup', () => {
+                    isResizing = false;
+                    document.removeEventListener('mousemove', handleMouseMove);
+                });
+            }
+
+            function handleMouseMove(e) {
+                if (isResizing) {
+                    var newWidth = e.clientX - sidebar.offsetLeft;
+                    sidebar.style.width = newWidth + 'px';
+                    mainContent.style.marginLeft = newWidth + 'px';
+                }
+            }
+
+            var resizer = document.createElement('div');
+            resizer.className = 'resizer';
+            sidebar.appendChild(resizer);
+
+            resizer.addEventListener('mousedown', handleMouseDown);
+
+            // Scroll event listener to check and reposition .sidenav
+            window.addEventListener('scroll', function () {
+                var scrollPosition = window.scrollY;
+                var mainContentRect = mainContent.getBoundingClientRect();
+
+                // Adjust the position of .sidenav based on scroll and main content position
+                if (scrollPosition > mainContentRect.top) {
+                    sidebar.style.position = 'fixed';
+                    sidebar.style.top = '0';
+                } else {
+                    sidebar.style.position = 'absolute';
+                    sidebar.style.top = mainContentRect.top + 'px';
+                }
+            });
+        });
+    }
+</script>
