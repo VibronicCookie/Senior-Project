@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .main {
-            margin-left: 220px; /* Initial margin-left */
-            transition: margin-left 0.3s; /* Add a smooth transition for resizing */
+            margin-left: 250px;
+            transition: margin-left 0.3s;
         }
 
         h1 {
@@ -27,32 +27,32 @@
 
         section {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two columns of equal size */
-            grid-gap: 20px; /* Space between grid items */
-            max-width: 800px; /* Maximum width of the section */
-            width: 100%; /* Take up the entire width of the screen */
-            margin: auto; /* Center the section horizontally */
-            box-sizing: border-box; /* Include padding and borders in total width and height */
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            box-sizing: border-box;
         }
 
             section div {
-                padding: 10px; /* Add some padding around the content */
-                display: flex; /* Use flexbox for internal alignment */
-                flex-direction: column; /* Stack elements vertically */
-                align-items: center; /* Center-align the flex items */
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             section img {
-                width: 100%; /* Make images responsive within their containers */
-                max-width: 300px; /* Increase the maximum width for larger images */
-                height: auto; /* Maintain aspect ratio */
-                margin-top: 10px; /* Space between the link and image */
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                margin-top: 10px;
             }
 
         .sidenav {
             float: left;
             height: 100%;
-            width: 220px;
+            width: 250px;
             position: fixed;
             z-index: 1;
             left: 0;
@@ -60,8 +60,8 @@
             color: white;
             overflow-x: hidden;
             padding-top: 20px;
-            resize: horizontal; /* Enable horizontal resizing */
-            overflow: auto; /* Allow content to be visible while resizing */
+            resize: horizontal;
+            overflow: auto;
         }
 
         #informationheader, #informationbody {
@@ -70,8 +70,8 @@
         }
 
             #informationbody p {
-                line-height: 1; /* Adjust the value as needed */
-                margin-bottom: 6px; /* Add some bottom margin for separation */
+                line-height: 1;
+                margin-bottom: 6px;
             }
 
         .resizer {
