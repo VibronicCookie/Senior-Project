@@ -2,11 +2,12 @@
 {
     public class Recruit
     {
-        public string fname = string.Empty;
-        public string lname = string.Empty;
-        public string email = string.Empty;
-        public string highschool = string.Empty;
-        public int gradyear = 0;
-        public string notes = string.Empty;
+        public string fname { get; set; }
+        public string lname { get; set; }
+        public string email { get; set; }
+        public string highschool { get; set; }
+        public int gradyear { get; set; }
+        public string notes { get; set; }
     }
+
 }
