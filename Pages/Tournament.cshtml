@@ -5,6 +5,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        body {
+            display: block;
+        }
+
         .main {
             margin-left: 250px;
             transition: margin-left 0.3s;
@@ -105,8 +109,8 @@
         </div>
     </div>
     <div class="main">
-        <h1>First Annual Hammer Saints Invitational</h1>
         <div id="results">
+            <h1>First Annual Hammer Saints Invitational</h1>
             Results:
             <section>
                 <div>
@@ -153,6 +157,24 @@
                 }
             }
 
+            //window.onscroll = function () {
+            //    myFunction()
+            //};
+
+            //var side = document.querySelector('.sidenav');
+            //var main = document.querySelector('.main');
+            //var sticky = header.offsetTop;
+
+            //function myFunction() {
+            //    if (window.pageYOffset > sticky) {
+            //        side.classList.add("sticky");
+            //        main.classList.add('sticky-buffer');
+            //    } else {
+            //        side.classList.remove("sticky");
+            //        main.classList.remove('sticky-buffer');
+            //    }
+            //}
+
             var resizer = document.createElement('div');
             resizer.className = 'resizer';
             sidebar.appendChild(resizer);
@@ -163,6 +185,8 @@
             window.addEventListener('scroll', function () {
                 var scrollPosition = window.scrollY;
                 var mainContentRect = mainContent.getBoundingClientRect();
+                var windowHeight = window.innerHeight;
+                var documentHeight = document.documentElement.scrollHeight;
 
                 // Adjust the position of .sidenav based on scroll and main content position
                 if (scrollPosition > mainContentRect.top) {
@@ -171,6 +195,9 @@
                 } else {
                     sidebar.style.position = 'absolute';
                     sidebar.style.top = mainContentRect.top + 'px';
+                }
+                if (scrollPosition + windowHeight >= documentHeight) {
+                    window.scrollTo(0, documentHeight - windowHeight - 1);
                 }
             });
         });
