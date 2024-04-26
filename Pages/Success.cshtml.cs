@@ -9,9 +9,9 @@ namespace Senior_Project.Pages
         {
         }
 
-        public void OnPost()
+        public IActionResult OnPostAsync()
         {
-            RedirectToPage("./Index");
+            return RedirectToPage("./Index");
         }
     }
 }
